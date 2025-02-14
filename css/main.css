@@ -1036,23 +1036,22 @@ body {
 }
 .long-g--7 {
   left: 35vmin;
-  bottom: 20vmin;
-  z-index: -1;
-  filter: blur(0.3vmin);
-  transform: scale(0.6) rotate(2deg);
-  opacity: 0.7;
+  bottom: -10vmin;
+  z-index: 100;
+  filter: blur(0.1vmin);
+  transform: scale(0.9) rotate(2deg);
 }
 .long-g .leaf {
   --w: 15vmin;
   --h: 40vmin;
-  --c: #1aaa15;
+  --c: #00b815;
   position: absolute;
   bottom: 0;
   width: var(--w);
   height: var(--h);
   border-top-left-radius: 100%;
   border-left: 2vmin solid var(--c);
-  -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--dark-color));
+  -webkit-mask-image: linear-gradient(to top, transparent 20%, var(--c));
   transform-origin: bottom center;
 }
 .long-g .leaf--0 {
@@ -1061,16 +1060,17 @@ body {
           animation: leaf-ans-1 4s linear infinite;
 }
 .long-g .leaf--1 {
-  --w: 5vmin;
+  --w: 8vmin;
   --h: 60vmin;
+  z-index: 1;
+  filter: blur(0.3vmin);
   -webkit-animation: leaf-ans-1 4s linear infinite;
           animation: leaf-ans-1 4s linear infinite;
 }
 .long-g .leaf--2 {
-  --w: 10vmin;
+  --w: 5vmin;
   --h: 40vmin;
-  left: -0.5vmin;
-  bottom: 5vmin;
+  left: -2vmin;
   transform-origin: bottom left;
   transform: rotateY(-180deg);
   -webkit-animation: leaf-ans-2 3s linear infinite;
@@ -1078,11 +1078,10 @@ body {
 }
 .long-g .leaf--3 {
   --w: 5vmin;
-  --h: 30vmin;
-  left: -1vmin;
-  bottom: 3.2vmin;
+  --h: 50vmin;
+  left: 5vmin;
   transform-origin: bottom left;
-  transform: rotate(-10deg) rotateY(-180deg);
+  transform: rotate(5deg);
   -webkit-animation: leaf-ans-3 3s linear infinite;
           animation: leaf-ans-3 3s linear infinite;
 }
@@ -1122,84 +1121,40 @@ body {
 }
 @-webkit-keyframes leaf-ans-3 {
   0%, 100% {
-    transform: rotate(-10deg) rotateY(-180deg);
+    transform: rotate(5deg);
   }
   50% {
-    transform: rotate(-20deg) rotateY(-180deg);
+    transform: rotate(0deg) scale(1.1);
   }
 }
 @keyframes leaf-ans-3 {
   0%, 100% {
-    transform: rotate(-10deg) rotateY(-180deg);
+    transform: rotate(5deg);
   }
   50% {
-    transform: rotate(-20deg) rotateY(-180deg);
+    transform: rotate(0deg) scale(1.1);
   }
 }
-.grow-ans {
-  -webkit-animation: grow-ans 2s var(--d) backwards;
-          animation: grow-ans 2s var(--d) backwards;
-}
-
-@-webkit-keyframes grow-ans {
+@-webkit-keyframes grow-flower {
   0% {
     transform: scale(0);
-    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
-
-@keyframes grow-ans {
+@keyframes grow-flower {
   0% {
     transform: scale(0);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes light-ans {
-  0% {
-    opacity: 0;
-    transform: translateY(0vmin);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(-5vmin) translateX(-2vmin);
   }
   50% {
-    opacity: 1;
-    transform: translateY(-15vmin) translateX(2vmin);
-    filter: blur(0.2vmin);
-  }
-  75% {
-    transform: translateY(-20vmin) translateX(-2vmin);
-    filter: blur(0.2vmin);
+    transform: scale(1.1);
   }
   100% {
-    transform: translateY(-30vmin);
-    opacity: 0;
-    filter: blur(1vmin);
-  }
-}
-@keyframes light-ans {
-  0% {
-    opacity: 0;
-    transform: translateY(0vmin);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(-5vmin) translateX(-2vmin);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-15vmin) translateX(2vmin);
-    filter: blur(0.2vmin);
-  }
-  75% {
-    transform: translateY(-20vmin) translateX(-2vmin);
-    filter: blur(0.2vmin);
-  }
-  100% {
-    transform: translateY(-30vmin);
-    opacity: 0;
-    filter: blur(1vmin);
+    transform: scale(1);
   }
 }
 @-webkit-keyframes moving-flower-1 {
@@ -1286,14 +1241,106 @@ body {
     border-radius: 1vmin;
   }
 }
-@-webkit-keyframes blooming-flower {
+@-webkit-keyframes grow-flower-tree-2 {
+  0% {
+    height: 0;
+    border-radius: 1vmin;
+  }
+}
+@keyframes grow-flower-tree-2 {
+  0% {
+    height: 0;
+    border-radius: 1vmin;
+  }
+}
+@-webkit-keyframes leaf-left-ans {
+  0% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+}
+@keyframes leaf-left-ans {
+  0% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+}
+@-webkit-keyframes leaf-right-ans {
+  0% {
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+}
+@keyframes leaf-right-ans {
+  0% {
+    transform: translate(-50%, -50%) rotate(-10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(5deg);
+  }
+}
+@-webkit-keyframes grow-branch-ans {
   0% {
     transform: scale(0);
   }
 }
-@keyframes blooming-flower {
+@keyframes grow-branch-ans {
   0% {
     transform: scale(0);
+  }
+}
+@-webkit-keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
+  }
+}
+@keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
   }
 }
 @-webkit-keyframes moving-grass {
@@ -1328,23 +1375,49 @@ body {
     transform: scale(0.5) rotate(79deg) rotateX(10deg) rotateY(-200deg);
   }
 }
-.growing-grass {
-  -webkit-animation: growing-grass-ans 1s 2s backwards;
-          animation: growing-grass-ans 1s 2s backwards;
+.grow-ans {
+  -webkit-animation: grow-ans 4s linear;
+          animation: grow-ans 4s linear;
+  transform-origin: bottom;
 }
 
-@-webkit-keyframes growing-grass-ans {
+@-webkit-keyframes grow-ans {
   0% {
     transform: scale(0);
   }
+  100% {
+    transform: scale(1);
+  }
 }
 
-@keyframes growing-grass-ans {
+@keyframes grow-ans {
   0% {
     transform: scale(0);
   }
+  100% {
+    transform: scale(1);
+  }
 }
-.container * {
-  -webkit-animation-play-state: paused !important;
-          animation-play-state: paused !important;
-}/*# sourceMappingURL=main.css.map */
+
+/* Mensaje de San Valentín */
+.valentine-message {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+}
+
+.valentine-message h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.valentine-message p {
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
